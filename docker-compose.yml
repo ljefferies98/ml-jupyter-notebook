@@ -1,0 +1,15 @@
+version: '3.9'
+services:
+  jupyter:
+    container_name: Jupyter
+    image: jupyter/datascience-notebook:latest
+    security_opt:
+      - no-new-privileges:true
+    volumes:
+      - jupyter_data:/home/jovyan/work:rw  # Use named volume instead of a bind mount
+    ports:
+      - 10235:8888
+    restart: on-failure:5
+
+volumes:
+  jupyter_data:  # Define the named volume
