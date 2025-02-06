@@ -6,7 +6,7 @@ services:
     security_opt:
       - no-new-privileges:true
     volumes:
-      - jupyter_data:/home/jovyan/work:rw  # Use named volume instead of a bind mount
+      - jupyter_data:/home/lewis/work:rw  # Use named volume instead of a bind mount
     ports:
       - 10235:8888
     restart: on-failure:5
